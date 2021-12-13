@@ -21,10 +21,9 @@ public class Main {
 //    faceup.add(pDeck.cards.pop());
 
         faceup.add(new Card(2, 3));
+        faceup.add(new Card(2, 2));
         faceup.add(new Card(2, 1));
-        faceup.add(new Card(3, 3));
-        faceup.add(new Card(5, 1));
-        faceup.add(new Card(3, 2));
+        faceup.add(new Card(2, 4));
 //    faceup.add(new Card(11, 1));
 //    faceup.add(new Card(12, 1));
 //    faceup.add(new Card(9, 1));
@@ -37,7 +36,7 @@ public class Main {
         }
         System.out.println();
 
-        hand = FullHouse.fFullHouse(faceup);
+        hand = Quads.fQuads(faceup);
         if (hand.get(0).getValue() != -1) {
             for (Card card : hand) {
                 System.out.print(card.getName() + ", ");

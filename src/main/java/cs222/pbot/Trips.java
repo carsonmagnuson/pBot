@@ -22,8 +22,6 @@ public class Trips {//Three of a kind
         Card val = new Card(-1, -1);
         best.clear();
         best.add(val);
-        best.add(val);
-        best.add(val);
         return best;
     }
 }
