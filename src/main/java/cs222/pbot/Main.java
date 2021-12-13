@@ -20,15 +20,15 @@ public class Main {
 //    faceup.add(pDeck.cards.pop());
 //    faceup.add(pDeck.cards.pop());
 
-        faceup.add(new Card(2, 3));
-        faceup.add(new Card(2, 2));
+        faceup.add(new Card(1, 1));
         faceup.add(new Card(2, 1));
-        faceup.add(new Card(2, 4));
-//    faceup.add(new Card(11, 1));
-//    faceup.add(new Card(12, 1));
-//    faceup.add(new Card(9, 1));
-//    faceup.add(new Card(10, 1));
-//    faceup.add(new Card(13, 1));
+        faceup.add(new Card(2, 1));
+        faceup.add(new Card(5, 1));
+        faceup.add(new Card(6, 1));
+        faceup.add(new Card(10, 1));
+        faceup.add(new Card(11, 1));
+        faceup.add(new Card(12, 1));
+        faceup.add(new Card(13, 1));
 
 
         for (Card card : faceup) {
@@ -36,21 +36,13 @@ public class Main {
         }
         System.out.println();
 
-        hand = Quads.fQuads(faceup);
-        if (hand.get(0).getValue() != -1) {
-            for (Card card : hand) {
-                System.out.print(card.getName() + ", ");
-            }
-        }
-
-
-//    Trips trips = new Trips();
-//    hand = trips.fTrips(faceup);
-//    System.out.println("\n" + hand.get(0).getName() + ", " + hand.get(1).getName() + ", and the " + hand.get(2).getName());
-
-//    Pair pair = new Pair();
-//    System.out.println("\n" + hand.get(0).getName() + " and " + hand.get(1).getName());
-
+        Hand.bestHand(faceup);
+//        hand = StraightFlush.fStraightFlush(faceup);
+//        if (hand.get(0).getValue() != -1) {
+//            for (Card card : hand) {
+//                System.out.print(card.getName() + ", ");
+//            }
+//        }
 
     }
 

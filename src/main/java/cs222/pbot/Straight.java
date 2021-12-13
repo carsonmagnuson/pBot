@@ -9,6 +9,22 @@ public class Straight {
         Collections.reverse(Deck.sort(cards));
 
         ArrayList<Card> best = new ArrayList<>();
+        if (seqCheck(cards, best)) return best;
+        for(Card card: cards){
+            if(card.getValue()==1){
+                card.setValue(14);
+            }
+        }
+
+        Collections.reverse(Deck.sort(cards));
+
+        if (seqCheck(cards, best)) return best;
+        Card val = new Card(-1, -1);
+        best.add(val);
+        return best;
+    }
+
+    private static boolean seqCheck(ArrayList<Card> cards, ArrayList<Card> best) {
         for (int card = 0; card < cards.size() - 4; card++) {
             best.clear();
             for (int comparison = 0; comparison < 5; comparison++) {
@@ -17,13 +33,11 @@ public class Straight {
                 }
             }
             if (best.size() > 4) {
-                return best;
+                return true;
             }
         }
         best.clear();
-        Card val = new Card(-1, -1);
-        best.add(val);
-        return best;
+        return false;
     }
 
 }

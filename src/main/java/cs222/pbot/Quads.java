@@ -3,7 +3,7 @@ package cs222.pbot;
 import java.util.ArrayList;
 
 public class Quads {
-    public static ArrayList<Card> fQuads(ArrayList<Card> cards){
+    public static ArrayList<Card> fQuads(ArrayList<Card> cards) {
         ArrayList<Card> best = new ArrayList<>();
         for (Card card : cards) {
             best.clear();

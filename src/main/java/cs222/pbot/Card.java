@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class Card {
     private static HashMap<Integer, String> valNames;
     private static HashMap<Integer, String> suitNames;
-    private final int value;
+    private int value;
     private final int suit;
 
     public Card(int value, int suit) {
@@ -27,6 +27,7 @@ public class Card {
         valNames.put(11, "Jack");
         valNames.put(12, "Queen");
         valNames.put(13, "King");
+        valNames.put(14, "Ace");
 
         suitNames = new HashMap<>();
         suitNames.put(-1, "none");
@@ -42,6 +43,10 @@ public class Card {
 
     public int getSuit() {
         return suit;
+    }
+
+    public void setValue(int value){
+        this.value = value;
     }
 
     public String getName() {
