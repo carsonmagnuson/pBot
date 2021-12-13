@@ -15,7 +15,7 @@ public class Deck {
         }
     }
 
-    public static ArrayList<Card> sort(ArrayList<Card> cards) {
+    public static ArrayList<Card> sort(ArrayList<Card> cards) {//sorting any number of cards using a merge sort
         mergeSort(cards, 0, cards.size() - 1);
         return cards;
     }
@@ -26,9 +26,8 @@ public class Deck {
         int n2 = end - mid;
 
         ArrayList<Card> LeftArray = new ArrayList<>();
-        ArrayList<Card> RightArray = new ArrayList<>(); //temporary arrays
+        ArrayList<Card> RightArray = new ArrayList<>();
 
-        /* copy data to temp arrays */
         for (i = 0; i < n1; i++) {
             LeftArray.add(a.get(beg + i));
         }
@@ -37,10 +36,9 @@ public class Deck {
             RightArray.add(a.get(mid + 1 + j));
         }
 
-
-        i = 0; /* initial index of first sub-array */
-        j = 0; /* initial index of second sub-array */
-        k = beg;  /* initial index of merged sub-array */
+        i = 0;
+        j = 0;
+        k = beg;
 
         while (i < n1 && j < n2) {
             if (LeftArray.get(i).getValue() <= RightArray.get(j).getValue()) {
@@ -65,7 +63,7 @@ public class Deck {
         }
     }
 
-    public static void mergeSort(ArrayList<Card> a, int beg, int end) {
+    public static void mergeSort(ArrayList<Card> a, int beg, int end) {//merge sort
         if (beg < end) {
             int mid = (beg + end) / 2;
             mergeSort(a, beg, mid);
@@ -74,7 +72,7 @@ public class Deck {
         }
     }
 
-    public ArrayList<String> flop() {
+    public ArrayList<String> flop() {//method to return top three cards off the deck
         ArrayList<String> flop = new ArrayList<>();
         for (int x = 0; x < 3; x++) {
             flop.add(cards.pop().getName());
@@ -82,7 +80,7 @@ public class Deck {
         return flop;
     }
 
-    public Stack<Card> shuffle() {
+    public Stack<Card> shuffle() {//shuffle method
         ArrayList<Card> deck = new ArrayList<>();
         while (!cards.isEmpty()) {
             deck.add(cards.pop());

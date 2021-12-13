@@ -4,35 +4,36 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        int preflop = 0;
-        int flop = 1;
-        int river = 2;
-        int turn = 3;
         Deck pDeck = new Deck();
         ArrayList<Card> best;
         ArrayList<Card> faceup = new ArrayList<>();
+        ArrayList<Card> royal = new ArrayList<>();
+        ArrayList<Card> quads = new ArrayList<>();
         pDeck.shuffle();
 
-        //Create random 7 card set
-        for (int x = 0; x < 7; x++) {
+        royal.add(new Card(1, 2));//royal flush set
+        royal.add(new Card(13, 2));
+        royal.add(new Card(12, 2));
+        royal.add(new Card(11, 2));
+        royal.add(new Card(10, 2));
+
+        quads.add(new Card(1, 1));//quads set
+        quads.add(new Card(1, 2));
+        quads.add(new Card(1, 3));
+        quads.add(new Card(1, 4));
+
+
+
+        for (int x = 0; x < 7; x++) {//Creating/printing random 7 card set
+            System.out.print(pDeck.cards.peek().getName() + ", ");
             faceup.add(pDeck.cards.pop());
         }
-//Testing
-//        faceup.add(new Card(7, 1));
-//        faceup.add(new Card(6, 1));
-//        faceup.add(new Card(5, 1));
-//        faceup.add(new Card(6, 1));
-//        faceup.add(new Card(8, 1));
-//        faceup.add(new Card(9, 1));
-//        faceup.add(new Card(10, 1));
-//        faceup.add(new Card(10, 2));
-//        faceup.add(new Card(10, 3));
 
-        for (Card card : faceup) {
-            System.out.print(card.getName() + ", ");
-        }
-        System.out.println();
+
+        System.out.println();//Testing
         System.out.println(Hand.bestHand(faceup));
+        System.out.println(Hand.bestHand(quads));
+        System.out.println(Hand.bestHand(royal));
 
     }
 }

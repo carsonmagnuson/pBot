@@ -4,8 +4,7 @@ import java.util.ArrayList;
 
 public class Hand {
     public static String bestHand(ArrayList<Card> cards) {
-        ArrayList<Card> best = new ArrayList<>(cards);
-
+        ArrayList<Card> best = new ArrayList<>(cards);//creating deepcopy of original cardlist, because some methods alter the cardlist and render it unusable for others
 
         best = StraightFlush.fStraightFlush(best);
         if (fHand(best)) {
@@ -59,7 +58,7 @@ public class Hand {
 
     }
 
-    public static boolean fHand(ArrayList<Card> best) {
+    public static boolean fHand(ArrayList<Card> best) {//check if negative value card was returned
         if (best.get(0).getValue() != -1) {
             return true;
         } else {
