@@ -52,4 +52,15 @@ public class Card {
     public String getName() {
         return valNames.get(this.value) + " of " + suitNames.get(this.suit);
     }
+    public String getName(int val){
+        if(val==0) {
+            if (this.value == 6) {
+                return valNames.get(this.value) + "es";
+            } else {
+                return valNames.get(this.value) + "s";
+            }
+        }else{
+            return valNames.get(this.value);
+        }
+    }
 }

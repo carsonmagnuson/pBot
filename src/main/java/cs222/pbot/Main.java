@@ -9,48 +9,31 @@ public class Main {
         int river = 2;
         int turn = 3;
         Deck pDeck = new Deck();
-        ArrayList<Card> hand;
+        ArrayList<Card> best;
         ArrayList<Card> faceup = new ArrayList<>();
         pDeck.shuffle();
-//    faceup.add(pDeck.cards.pop());
-//    faceup.add(pDeck.cards.pop());
-//    faceup.add(pDeck.cards.pop());
-//    faceup.add(pDeck.cards.pop());
-//    faceup.add(pDeck.cards.pop());
-//    faceup.add(pDeck.cards.pop());
-//    faceup.add(pDeck.cards.pop());
 
-        faceup.add(new Card(1, 1));
-        faceup.add(new Card(2, 1));
-        faceup.add(new Card(2, 1));
-        faceup.add(new Card(5, 1));
-        faceup.add(new Card(6, 1));
-        faceup.add(new Card(10, 1));
-        faceup.add(new Card(11, 1));
-        faceup.add(new Card(12, 1));
-        faceup.add(new Card(13, 1));
-
+        //Create random 7 card set
+        for (int x = 0; x < 7; x++) {
+            faceup.add(pDeck.cards.pop());
+        }
+//Testing
+//        faceup.add(new Card(7, 1));
+//        faceup.add(new Card(6, 1));
+//        faceup.add(new Card(5, 1));
+//        faceup.add(new Card(6, 1));
+//        faceup.add(new Card(8, 1));
+//        faceup.add(new Card(9, 1));
+//        faceup.add(new Card(10, 1));
+//        faceup.add(new Card(10, 2));
+//        faceup.add(new Card(10, 3));
 
         for (Card card : faceup) {
             System.out.print(card.getName() + ", ");
         }
         System.out.println();
+        System.out.println(Hand.bestHand(faceup));
 
-        Hand.bestHand(faceup);
-//        hand = StraightFlush.fStraightFlush(faceup);
-//        if (hand.get(0).getValue() != -1) {
-//            for (Card card : hand) {
-//                System.out.print(card.getName() + ", ");
-//            }
-//        }
-
-    }
-
-    public static void calculate(int phase, ArrayList<Card> hand, ArrayList<Card> faceup) {
-        switch (phase) {
-            case 0:
-                Statistics.preflop(hand);
-        }
     }
 }
 //https://towardsdatascience.com/poker-with-python-how-to-score-all-hands-in-texas-holdem-6fd750ef73d

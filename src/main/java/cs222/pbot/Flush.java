@@ -36,6 +36,11 @@ public class Flush {
         }
         for (ArrayList<Card> currSuit : suits) {
             if (currSuit.size() > 4) {
+                for(Card card: cards){
+                    if(card.getValue()==1){
+                        card.setValue(14);
+                    }
+                }
                 Collections.reverse(Deck.sort(currSuit));
                 best.add(currSuit.get(0));
                 return best;

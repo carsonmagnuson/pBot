@@ -10,8 +10,8 @@ public class Straight {
 
         ArrayList<Card> best = new ArrayList<>();
         if (seqCheck(cards, best)) return best;
-        for(Card card: cards){
-            if(card.getValue()==1){
+        for (Card card : cards) {
+            if (card.getValue() == 1) {
                 card.setValue(14);
             }
         }
